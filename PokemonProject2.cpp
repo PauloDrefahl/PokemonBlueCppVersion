@@ -33,8 +33,8 @@ int main() {
     }
     text.setFont(font);
     text.setString("Select  Pokemon...");
-    text.setCharacterSize(29); // in pixels, not points!
-    text.setPosition(402, 645);
+    text.setCharacterSize(31); // in pixels, not points!
+    text.setPosition(405, 624);
     text.setFillColor(sf::Color::Black);
 
 // Images, Sprites
@@ -120,7 +120,7 @@ int main() {
 void renderBattle(int pokemon) {
     bool Poke1IsAlive = true;
     bool PokeCPUIsAlive = true;
-    int pokemon_hp = 50, player_hp = 50;
+    int pokemon_hp = 60, player_hp = 60;
     int Tackle = 1, ElemAttack = 3;
     int sum;
 
@@ -144,14 +144,14 @@ void renderBattle(int pokemon) {
     sf::Text hp_pokemon;
     hp_pokemon.setFont(font);
     hp_pokemon.setString(std::to_string(pokemon_hp));
-    hp_pokemon.setCharacterSize(20); // in pixels, not points!
+    hp_pokemon.setCharacterSize(25); // in pixels, not points!
     hp_pokemon.setPosition(365, 162);
     hp_pokemon.setFillColor(sf::Color::Black);
 
     sf::Text hp_pokemon_const;
     hp_pokemon_const.setFont(font);
     hp_pokemon_const.setString("50");
-    hp_pokemon_const.setCharacterSize(20); // in pixels, not points!
+    hp_pokemon_const.setCharacterSize(25); // in pixels, not points!
     hp_pokemon_const.setPosition(430, 162);
     hp_pokemon_const.setFillColor(sf::Color::Black);
 
@@ -159,14 +159,14 @@ void renderBattle(int pokemon) {
     sf::Text hp_player;
     hp_player.setFont(font);
     hp_player.setString(std::to_string(player_hp));
-    hp_player.setCharacterSize(20); // in pixels, not points!
+    hp_player.setCharacterSize(25); // in pixels, not points!
     hp_player.setPosition(980, 475);
     hp_player.setFillColor(sf::Color::Black);
 
     sf::Text hp_player_const;
     hp_player_const.setFont(font);
     hp_player_const.setString("50");
-    hp_player_const.setCharacterSize(20); // in pixels, not points!
+    hp_player_const.setCharacterSize(25); // in pixels, not points!
     hp_player_const.setPosition(1052, 475);
     hp_player_const.setFillColor(sf::Color::Black);
 
