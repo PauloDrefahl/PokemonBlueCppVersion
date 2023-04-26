@@ -16,7 +16,7 @@ If you are using an older version of the project, we strongly recommend that you
 ## Reporting Vulnerabilities
 If you believe that you have discovered a security vulnerability in our Pokemon game project, we encourage you to report it to us as soon as possible.
 
-To report a vulnerability, please contact us at [insert email address] and include the following information:
+To report a vulnerability, please contact us at phmocelin@gmail.com and include the following information:
 
 A detailed description of the vulnerability and how it can be exploited
 Steps to reproduce the vulnerability
