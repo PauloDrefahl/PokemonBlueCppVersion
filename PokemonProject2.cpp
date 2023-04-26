@@ -29,6 +29,7 @@ int main() {
     //Text Config
     sf::Text text;
     sf::Font font;
+    
      if (!font.loadFromFile("PKMNRBYGSC.ttf")) {
         std::cerr << "Font file not found or couldn't be opened" << std::endl;
         return EXIT_FAILURE;
