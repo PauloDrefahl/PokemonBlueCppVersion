@@ -8,13 +8,14 @@
 #include "iostream"
 #include "pokemonConfig.h"
 #include "cstdlib"
+#include <memory>
 
 void renderBattle(int pokemon);
 void UpdateHP(int Attack, int &pikachu_hp);
 
 int main() {
     //Variables
-    int mousePosX, mousePosY;
+    int mousePosX = 0, mousePosY = 0;
     int pokemon;
 
     //Window config
@@ -28,8 +29,9 @@ int main() {
     //Text Config
     sf::Text text;
     sf::Font font;
-    if (!font.loadFromFile("C:/Users/Paulo Drefahl/Desktop/hellosfml/PKMNRBYGSC.ttf")) {
-        std::cout << "font error";
+     if (!font.loadFromFile("PKMNRBYGSC.ttf")) {
+        std::cerr << "Font file not found or couldn't be opened" << std::endl;
+        return EXIT_FAILURE;
     }
     text.setFont(font);
     text.setString("Select  Pokemon...");
@@ -40,8 +42,14 @@ int main() {
 // Images, Sprites
     sf::Texture mainMenuImg;
     sf::Texture pokemonSelectionImg;
-    pokemonSelectionImg.loadFromFile("");
-    mainMenuImg.loadFromFile("");
+    if (!pokemonSelectionImg.loadFromFile("pokemonSelection.png")) {
+        std::cerr << "Pokemon selection image not found or couldn't be opened" << std::endl;
+        return EXIT_FAILURE;
+    }
+    if (!mainMenuImg.loadFromFile("mainMenu.png")) {
+        std::cerr << "Main menu image not found or couldn't be opened" << std::endl;
+        return EXIT_FAILURE;
+    }
     sf::Sprite sprite(mainMenuImg);
     sf::Sprite sprite2(pokemonSelectionImg);
 
@@ -173,13 +181,22 @@ void renderBattle(int pokemon) {
     switch (pokemon)
     {
         case 0:
-            BattleBackground.loadFromFile("C:/Users/kskos/CLionProjects/PokemonBlueCpp/char_battle_1frame.png");
+            if (!BattleBackground.loadFromFile("Cchar_battle_1frame.png")) {
+              std::cerr << "Battle background file not found or couldn't be opened" << std::endl;
+              return EXIT_FAILURE;
+                }
         break;
         case 1:
-            BattleBackground.loadFromFile("C:/Users/kskos/CLionProjects/PokemonBlueCpp/bulba_battle_1frame.png");
+            if (!BattleBackground.loadFromFile("bulba_battle_1frame.png")) {
+                std::cerr << "Battle background file not found or couldn't be opened" << std::endl;
+                return EXIT_FAILURE;
+            }
         break;
         case 2:
-            BattleBackground.loadFromFile("C:/Users/kskos/CLionProjects/PokemonBlueCpp/squir_battle_1frame.png");
+            if (!BattleBackground.loadFromFile("squir_battle_1frame.png")) {
+                std::cerr << "Battle background file not found or couldn't be opened" << std::endl;
+                return EXIT_FAILURE;
+            }
         break;
     }
 
