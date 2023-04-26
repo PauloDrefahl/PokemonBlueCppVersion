@@ -42,6 +42,7 @@ int main() {
 // Images, Sprites
     sf::Texture mainMenuImg;
     sf::Texture pokemonSelectionImg;
+    
     if (!pokemonSelectionImg.loadFromFile("pokemonSelection.png")) {
         std::cerr << "Pokemon selection image not found or couldn't be opened" << std::endl;
         return EXIT_FAILURE;
